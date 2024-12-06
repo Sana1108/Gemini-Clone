@@ -29,6 +29,9 @@ const ContextProvider=(props)=>{
         if(prompt !== undefined){
            response= await run(prompt);
            setRecentPrompt(prompt)
+           if(!prevPrompts.includes(prompt)){
+            setPrevPrompts(prev=>[...prev,prompt])
+           }
         }else{
             setPrevPrompts(prev=>[...prev,input])
             setRecentPrompt(input)
