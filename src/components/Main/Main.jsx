@@ -3,6 +3,7 @@ import { assets } from '../../assets/assets';
 import { Context } from '../../context/Context';
 import './Main.css';
 
+
 const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
 
 const Main = () => {
@@ -14,7 +15,7 @@ const Main = () => {
   useEffect(() => {
     if (SpeechRecognition) {
       const recog = new SpeechRecognition();
-      recog.continuous = true;
+      recog.continuous = true; 
       recog.interimResults = true; 
       recog.lang = 'en-US'; 
       setRecognition(recog);
